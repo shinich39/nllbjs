@@ -18,7 +18,8 @@ import nllb from 'nllbjs';
   // 3: 'facebook/nllb-200-3.3B'
   // 4: 'facebook/nllb-moe-54b'
 
-  // initialize take a very long time at first start
+  // initialize take a very long time at first start.
+  // it requires at least 8 GB of available storage during initialization.
   await nllb.init();
   
   for (const target of targets) {
