@@ -1,0 +1,15 @@
+{
+  "name": "nllbjs",
+  "version": "1.0.0",
+  "description": "Wrapping no-language-left-behind translate model.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "shinich39 <shinich39@gmail.com>",
+  "license": "MIT"
+}
