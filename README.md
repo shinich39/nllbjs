@@ -37,3 +37,4 @@ import nllb from 'nllbjs';
 - [no-language-left-behind](https://ai.meta.com/research/no-language-left-behind/)
 - [nllb-200-distilled-600M](https://huggingface.co/facebook/nllb-200-distilled-600M)
 - [Open-NLLB](https://github.com/gordicaleksa/Open-NLLB)
+- [nllb-en-ko-translation](https://int-i.github.io/python/2023-09-05/nllb-en-ko-translation/)
