@@ -1,4 +1,4 @@
-import py from "./py.js";
+import py from "./src/py.js";
 import path from "node:path";
 import fs from "node:fs";
 import { fileURLToPath } from 'node:url';

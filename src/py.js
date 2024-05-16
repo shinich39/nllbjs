@@ -6,12 +6,12 @@ import { spawn, execFile } from "node:child_process";
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const VENV_PATH = path.join(__dirname, "venv");
-const SCRIPTS_PATH = path.join(__dirname, "venv", "Scripts");
-const PYTHON_PATH = path.join(__dirname, "venv", "Scripts", "python.exe");
-const PIP_PATH = path.join(__dirname, "venv", "Scripts", "pip.exe");
-const ACTIVATE_PATH = path.join(__dirname, "venv", "Scripts", "activate.bat");
-const DEACTIVATE_APTH = path.join(__dirname, "venv", "Scripts", "deactivate.bat");
+const VENV_PATH = path.join(__dirname, "..", "venv");
+const SCRIPTS_PATH = path.join(__dirname, "..", "venv", "Scripts");
+const PYTHON_PATH = path.join(__dirname, "..", "venv", "Scripts", "python.exe");
+const PIP_PATH = path.join(__dirname, "..", "venv", "Scripts", "pip.exe");
+const ACTIVATE_PATH = path.join(__dirname, "..", "venv", "Scripts", "activate.bat");
+const DEACTIVATE_APTH = path.join(__dirname, "..", "venv", "Scripts", "deactivate.bat");
 
 function S(filePath, args) {
   return new Promise(function(resolve, reject) {
