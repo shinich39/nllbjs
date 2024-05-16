@@ -1,4 +1,5 @@
 import sys
+import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 # set stdout encoding
@@ -10,20 +11,24 @@ def main(*args):
   src_lang = args[2]
   tgt_lang = args[3]
 
+  device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
   tokenizer = AutoTokenizer.from_pretrained(
     model_name, cache_dir="./models", src_lang=src_lang
   )
   model = AutoModelForSeq2SeqLM.from_pretrained(
     model_name, cache_dir="./models",
-  )
+  ).to(device)
+
   inputs = tokenizer(
     text=text, return_tensors="pt"
-  )
+  ).to(device)
+  
   translated_tokens = model.generate(
-    **inputs, forced_bos_token_id=tokenizer.lang_code_to_id[tgt_lang], max_length=512
+    **inputs, forced_bos_token_id=tokenizer.lang_code_to_id[tgt_lang], max_length=512,
   )
   output = tokenizer.batch_decode(
-    translated_tokens, skip_special_tokens=True
+    translated_tokens, skip_special_tokens=True,
   )[0]
 
   sys.stdout.write(output)
