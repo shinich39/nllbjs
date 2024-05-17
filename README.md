@@ -38,3 +38,4 @@ import nllb from 'nllbjs';
 - [nllb-200-distilled-600M](https://huggingface.co/facebook/nllb-200-distilled-600M)
 - [Open-NLLB](https://github.com/gordicaleksa/Open-NLLB)
 - [nllb-en-ko-translation](https://int-i.github.io/python/2023-09-05/nllb-en-ko-translation/)
+- [Language-Code-ISO-639-FLORES-200](https://jay-chamber.tistory.com/entry/Language-Code-ISO-639-FLORES-200)
