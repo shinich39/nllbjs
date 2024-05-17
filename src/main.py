@@ -26,8 +26,9 @@ def main(*args):
     text=text, return_tensors="pt"
   ).to(device)
   
+  # max_length <= 512
   translated_tokens = model.generate(
-    **inputs, forced_bos_token_id=tokenizer.lang_code_to_id[tgt_lang], max_length=512,
+    **inputs, forced_bos_token_id=tokenizer.lang_code_to_id[tgt_lang], max_length=384,
   )
 
   output = tokenizer.batch_decode(
