@@ -16,6 +16,8 @@ def main(*args):
   tokenizer = AutoTokenizer.from_pretrained(
     model_name, cache_dir="./models", src_lang=src_lang
   )
+
+  # https://github.com/huggingface/transformers/issues/2704
   model = AutoModelForSeq2SeqLM.from_pretrained(
     model_name, cache_dir="./models",
   ).to(device)
@@ -27,6 +29,7 @@ def main(*args):
   translated_tokens = model.generate(
     **inputs, forced_bos_token_id=tokenizer.lang_code_to_id[tgt_lang], max_length=512,
   )
+
   output = tokenizer.batch_decode(
     translated_tokens, skip_special_tokens=True,
   )[0]
